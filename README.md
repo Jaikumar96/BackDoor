@@ -6,8 +6,7 @@ This project implements a simple backdoor functionality using Python sockets. It
 backdoor.py: 
 This file contains the code for the client-side component of the backdoor, which establishes a connection to a remote server and allows the execution of commands on the host system.
 
-server.py:
-This file contains the code for the server-side component, which listens for incoming connections from client backdoors and manages command execution and file transfers.
+server.py: This file contains the code for the server-side component, which listens for incoming connections from client backdoors and manages command execution and file transfers.
 
 Features:
 Remote Command Execution: Execute shell commands on the target system remotely.
@@ -23,4 +22,8 @@ Once the connection is established, use the server console to send commands to t
 
 Disclaimer:
 This project is intended for educational and research purposes only. Unauthorized use of this software for malicious purposes is strictly prohibited. The authors do not endorse or support any illegal activities conducted with this software.
+
+License:
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 
