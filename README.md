@@ -1,26 +1,43 @@
-Backdoor Project 
+# Remote Shell Control
 
-Introduction:
-This project implements a simple backdoor functionality using Python sockets. It consists of two main files:
+This repository contains two Python scripts for remote shell control over a network connection.
 
-backdoor.py: 
-This file contains the code for the client-side component of the backdoor, which establishes a connection to a remote server and allows the execution of commands on the host system.
+## `server.py`
 
-server.py:
-This file contains the code for the server-side component, which listens for incoming connections from client backdoors and manages command execution and file transfers.
+This script listens for incoming connections from a target machine. It provides a command-line interface for executing commands on the target machine and transferring files between the server and the target.
 
-Features:
-Remote Command Execution: Execute shell commands on the target system remotely.
-File Upload/Download: Upload and download files between the target system and the server.
-Persistent Connection: The backdoor maintains a persistent connection to the server, allowing continuous communication and control.
+### Usage
 
-Usage:
-Ensure Python is installed on both the server and client systems.
-Run server.py on the system you want to act as the command and control server.
-Modify the IP address and port in backdoor.py to match the server's IP and port.
-Run backdoor.py on the target system you want to control.
-Once the connection is established, use the server console to send commands to the client backdoor.
+1. Run `server.py` on the machine you want to use as a control center.
+2. Wait for incoming connections from the target machine.
+3. Control the target machine by executing commands.
 
-Disclaimer:
-This project is intended for educational and research purposes only. Unauthorized use of this software for malicious purposes is strictly prohibited. The authors do not endorse or support any illegal activities conducted with this software.
+## `backdoor.py`
 
+This script is designed to be executed on the target machine. It connects to the server and provides remote access to the target machine's shell.
+
+### Usage
+
+1. Modify the `connection()` function in `backdoor.py` to specify the IP address and port of the server.
+2. Run `backdoor.py` on the target machine.
+3. Wait for the connection to be established with the server.
+4. Control the target machine remotely using the server.
+
+## Features
+
+- Execute shell commands on the target machine remotely.
+- Upload files from the server to the target machine.
+- Download files from the target machine to the server.
+- Automatic reconnection functionality in case of network interruptions.
+
+## Disclaimer
+
+This code is provided for educational purposes only. Use it responsibly and only on systems you have permission to access.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
